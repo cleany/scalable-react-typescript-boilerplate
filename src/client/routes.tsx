@@ -4,7 +4,7 @@ import { ThemeProvider } from 'styled-components';
 import { Route, IndexRoute, Router as ReactRouter } from 'react-router';
 import client from './apolloClient';
 import store, { history } from './store';
-import { App, Home, Docs, About, TodoApp, Blog, BlogPost } from './containers';
+import { App, Home, Docs, About, TodoApp, Blog, BlogPost, SampleAuth } from './containers';
 import colors from './theming';
 
 const ReactGA = require('react-ga');
@@ -26,6 +26,7 @@ export const routes = (
     <IndexRoute component={Home} />
     <Route path="/docs" component={Docs} />
     <Route path="/about" component={About} />
+    <Route path="/login" component={SampleAuth}/>
     <Route path="/blog" component={Blog} />
     <Route path="/blog/posts/:postId" component={BlogPost} />
     <Route path="/todo-app" component={TodoApp} />

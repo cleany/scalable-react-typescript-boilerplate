@@ -1,4 +1,5 @@
 /* GENERATOR-IMPORT */
+import SampleAuth from './SampleAuth';
 import Blog from './Blog';
 import BlogPost from './BlogPost';
 import App from './App';
@@ -10,6 +11,7 @@ import TodoApp from './TodoApp';
 
 export {
   /* GENERATOR-EXPORT */
+  SampleAuth,
   Blog,
   BlogPost,
   App,
