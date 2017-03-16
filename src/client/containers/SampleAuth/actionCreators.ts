@@ -4,6 +4,7 @@ import {
   LoadSuccessAction,
   LoadFailureAction,
   LoadCancelAction,
+  AuthenticateUser,
 } from './actions';
 import { ErrorType } from './types';
 
@@ -25,11 +26,17 @@ export const loadCancel = (): LoadCancelAction => ({
   type: T.LOAD_CANCEL,
 });
 
+export const authenticate = (isAuthed): AuthenticateUser => ({
+  type: T.AUTHENTICATE,
+  payload: isAuthed,
+});
+
 export const actionCreators = {
   loadInitiation,
   loadSuccess,
   loadFailure,
   loadCancel,
+  authenticate,
 };
 
 export default actionCreators;
