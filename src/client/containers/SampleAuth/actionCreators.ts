@@ -4,10 +4,7 @@ import {
   LoadSuccessAction,
   LoadFailureAction,
   LoadCancelAction,
-<<<<<<< HEAD
   AuthenticateUser,
-=======
->>>>>>> 99dd02b4c8cd30dc2846e14665bbf0c919c34be8
 } from './actions';
 import { ErrorType } from './types';
 
