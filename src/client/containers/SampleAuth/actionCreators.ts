@@ -26,7 +26,7 @@ export const loadCancel = (): LoadCancelAction => ({
   type: T.LOAD_CANCEL,
 });
 
-export const authenticate = (isAuthed): AuthenticateUser => ({
+export const authenticate = (isAuthed: boolean): AuthenticateUser => ({
   type: T.AUTHENTICATE,
   payload: isAuthed,
 });
