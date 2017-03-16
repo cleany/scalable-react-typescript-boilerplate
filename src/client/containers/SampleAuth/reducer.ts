@@ -33,7 +33,7 @@ const sampleAuthReducer = (
     });
   case T.AUTHENTICATE:
     return Object.assign({}, state, {
-      isAuthed: true,
+      isAuthed: action.payload,
     });
   default:
     return state;
