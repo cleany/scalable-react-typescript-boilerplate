@@ -10,8 +10,8 @@ import {
   SampleAuthDispatchProps,
   SampleAuthPropTypes,
 } from './types';
-import { Heading, Section } from './styles';
-import { Button, Box, Paragraph } from 'ui';
+import { Section } from './styles';
+import { Button } from 'ui';
 
 const mapStateToProps = (state: State): SampleAuthProps => ({
   isLoading: state.sampleAuth.isLoading,
@@ -40,29 +40,32 @@ class SampleAuth extends React.Component<SampleAuthPropTypes, SampleAuthState> {
   private handleClick(event: React.SyntheticEvent<undefined>) {
     event.preventDefault();
     const { actions, isAuthed } = this.props;
+    actions.loadInitiation();
     actions.authenticate(!isAuthed);
-
+    actions.loadSuccess(null);
   }
   public render() {
     const { isAuthed } = this.props;
+    console.log('isAuthed', isAuthed);
     return (
       <Section>
+        {/*{isAuthed
+          ?
+          <Button isHero onClick={this.handleClick}>Logout</Button>
+          :
+          <Button isHero onClick={this.handleClick}>Login</Button>
+        }*/}
         <Button
-          isHero
-          onClick={this.handleClick}
+            isHero
+            onClick={this.handleClick}
         >
           {isAuthed ? 'Log Out' : 'Log In'}
         </Button>
-        <Heading>
-          Best container ever!
-        </Heading>
-        {isAuthed &&
-          <Box>
-            <Paragraph>
-              Super Secret Resource!
-            </Paragraph>
-          </Box>
-        }
+        <Section>
+          {isAuthed &&
+            'Super Secret Resource!'
+          }
+        </Section>
       </Section>
     );
   }
