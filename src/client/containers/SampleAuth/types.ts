@@ -18,7 +18,11 @@ export type ActionType = LOAD_INITIATION_TYPE | LOAD_SUCCESS_TYPE | LOAD_FAILURE
 
 export interface ErrorType { message: string }
 
+export interface InputType { username: string, password: string }
+
 export interface SampleAuthProps extends React.Props<typeof SampleAuth> {
+  username: string;
+  password: string;
   isLoading: boolean;
   error?: ErrorType;
   data?: any;
@@ -26,6 +30,8 @@ export interface SampleAuthProps extends React.Props<typeof SampleAuth> {
 }
 
 export interface SampleAuthState {
+  username: string;
+  password: string;
   isLoading: boolean;
   error?: ErrorType;
   data?: any;
@@ -42,7 +48,7 @@ interface ActionMap extends ActionCreatorsMapObject {
   loadSuccess: (data: any) => LoadSuccessAction;
   loadFailure: (error: ErrorType) => LoadFailureAction;
   loadCancel: () => LoadCancelAction;
-  authenticate: (isAuthed: boolean) => AuthenticateUser;
+  authenticate: (data: InputType) => AuthenticateUser;
 }
 
 export interface SampleAuthDispatchProps {

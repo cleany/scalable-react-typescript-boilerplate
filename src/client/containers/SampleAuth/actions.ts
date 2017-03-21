@@ -1,6 +1,6 @@
 // import { PayloadAction } from '../../types';
 import { Action } from 'redux';
-import { ErrorType } from './types';
+import { ErrorType, InputType } from './types';
 import {
   LOAD_INITIATION_TYPE,
   LOAD_SUCCESS_TYPE,
@@ -11,7 +11,7 @@ import {
 
 export interface AuthenticateUser extends Action {
   type: AUTHENTICATE_TYPE;
-  payload: boolean;
+  payload: InputType;
 }
 
 export interface LoadInitiationAction extends Action {

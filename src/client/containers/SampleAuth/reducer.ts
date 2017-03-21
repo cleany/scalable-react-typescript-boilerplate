@@ -6,6 +6,8 @@ import {
 
 export { SampleAuthState };
 export const initialState: SampleAuthState = {
+  username: '',
+  password: '',
   isLoading: false,
   error: null,
   data: null,
@@ -24,6 +26,8 @@ const sampleAuthReducer = (
   case T.LOAD_SUCCESS:
     return Object.assign({}, state, {
       isLoading: false,
+      username: '',
+      password: '',
       data: action.payload,
     });
   case T.LOAD_FAILURE:
@@ -33,7 +37,9 @@ const sampleAuthReducer = (
     });
   case T.AUTHENTICATE:
     return Object.assign({}, state, {
-      isAuthed: action.payload,
+      username: action.payload.username,
+      password: action.payload.password,
+      isAuthed: true,
     });
   default:
     return state;
